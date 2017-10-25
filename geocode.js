@@ -32,7 +32,7 @@ async function run () {
     // generate RC file
     if (program.apiKey) {
       const rcFile = `GOOGLE_API_KEY=${program.apiKey}`
-      const RC_FILE_NAME = '.geocoderc'
+      const RC_FILE_NAME = '.geocode'
       console.log(`Creating ${RC_FILE_NAME}`)
       const filePath = path.resolve(path.join(HOME, '.config', RC_FILE_NAME))
       await fs.writeFile(filePath, rcFile)
