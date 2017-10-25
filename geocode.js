@@ -22,8 +22,10 @@ program
   .parse(process.argv)
 
 // lib
-const loadCSV = require('./lib/loadCSV')
-const {geocodeAddress, normalizeAddress} = require('./lib/geocoding')
+if (!program.apiKey) {
+  const loadCSV = require('./lib/loadCSV')
+  const {geocodeAddress, normalizeAddress} = require('./lib/geocoding')
+}
 
 async function run () {
   try {
@@ -31,6 +33,7 @@ async function run () {
     if (program.apiKey) {
       const rcFile = `GOOGLE_API_KEY=${program.apiKey}`
       const RC_FILE_NAME = '.geocoderc'
+      console.log(`Creating ${RC_FILE_NAME}`)
       const filePath = path.resolve(path.join(HOME, '.config', RC_FILE_NAME))
       await fs.writeFile(filePath, rcFile)
       console.log(`Wrote config file to ${filePath}`)
