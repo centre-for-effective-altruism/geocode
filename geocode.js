@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 const console = require('better-console')
 const _ = require('lodash')
 const throat = require('throat')
