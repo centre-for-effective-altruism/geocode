@@ -30,7 +30,7 @@ async function run () {
     if (program.apiKey) {
       const rcFile = `GOOGLE_API_KEY=${program.apiKey}`
       const RC_FILE_NAME = '.geocoderc'
-      const filePath = path.resolve(path.join(HOME, RC_FILE_NAME))
+      const filePath = path.resolve(path.join(HOME, '.config', RC_FILE_NAME))
       await fs.writeFile(filePath, rcFile)
       console.log(`Wrote config file to ${filePath}`)
       return

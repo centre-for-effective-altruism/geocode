@@ -20,8 +20,8 @@ yarn install
 ## If you don't do this you'll need to run
 ## from the install dir with node ./geocode <args...>
 npm install -g
-## Add your Google API Key (creates ~/.geocoderc)
-geocode -a <YOUR_GOOGLE_API_KEY>
+## Add your Google API Key (creates ~/.config/.geocoderc)
+geocode -a <GOOGLE_API_KEY>
 ```
 
 ## Usage
